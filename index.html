@@ -1109,6 +1109,30 @@
   body.regional-home-active .site-header{grid-template-columns:1fr}
   body.regional-home-active .site-header .pills{display:none!important}
   body.regional-home-active .site-header .brand{max-width:760px}
+
+
+  /* Regional dashboard charts */
+  .regional-dashboard-chart-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;margin:18px 0}
+  .regional-chart-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 2px 8px rgba(15,23,42,.06)}
+  .regional-chart-card h2{margin:0 0 8px;color:#0b1f35;font-size:22px}
+  .regional-chart-card p{margin:0 0 16px;color:#667085;line-height:1.45;font-size:14px}
+  .regional-bar-chart{display:grid;gap:13px;margin-top:8px}
+  .regional-bar-row{display:grid;grid-template-columns:210px 1fr 56px;gap:12px;align-items:center}
+  .regional-bar-label{font-size:13px;font-weight:900;color:#29364a;line-height:1.25}
+  .regional-bar-track{height:18px;border-radius:999px;background:#edf2f7;border:1px solid #d8e1ea;overflow:hidden}
+  .regional-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--ctm-teal),var(--ctm-green))}
+  .regional-bar-value{font-weight:900;color:#0b1f35;text-align:right;font-size:14px}
+  .regional-donut-wrap{display:flex;align-items:center;justify-content:center;margin:12px 0 14px}
+  .regional-risk-donut{width:185px;height:185px;border-radius:50%;position:relative;background:conic-gradient(#76bc43 0 52%, #f0b429 52% 78%, #d92d20 78% 100%)}
+  .regional-risk-donut:after{content:"Risk Mix";position:absolute;inset:42px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:#0b1f35;font-weight:900;box-shadow:inset 0 0 0 1px var(--line)}
+  .regional-risk-legend{display:grid;gap:8px;margin-top:10px}
+  .regional-risk-item{display:flex;justify-content:space-between;gap:10px;padding-bottom:8px;border-bottom:1px solid #eef2f6;color:#344054;font-size:13px}
+  .regional-risk-left{display:flex;align-items:center;gap:8px;font-weight:800}
+  .regional-risk-dot{width:11px;height:11px;border-radius:50%;background:#76bc43}
+  .regional-risk-item:nth-child(2) .regional-risk-dot{background:#f0b429}
+  .regional-risk-item:nth-child(3) .regional-risk-dot{background:#d92d20}
+  @media(max-width:1000px){.regional-dashboard-chart-grid{grid-template-columns:1fr}.regional-bar-row{grid-template-columns:1fr}.regional-bar-value{text-align:left}}
+
 </style>
 <!-- Updated: Regional Win/Loss sections now include home page tiles and full debrief templates. -->
 </head>
@@ -2665,6 +2689,31 @@
 <div class="regional-dashboard-kpi"><div class="kpi-label">High Priority</div><div class="kpi-value">5</div><div class="kpi-note">Shortlisted, negotiation, or executive attention required.</div></div>
 <div class="regional-dashboard-kpi"><div class="kpi-label">Close Forecast</div><div class="kpi-value">30 Days</div><div class="kpi-note">Leadership view for near-term decision timing.</div></div>
 </section>
+<section class="regional-dashboard-chart-grid">
+  <div class="regional-chart-card">
+    <h2>North America Pipeline by Stage</h2>
+    <p>Visual snapshot of open opportunities by sales stage. Use this chart in weekly reviews to quickly identify where pursuits are concentrated and where movement is needed.</p>
+    <div class="regional-bar-chart">
+      <div class="regional-bar-row"><div class="regional-bar-label">1 - Prospecting / Qualification</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:50%"></div></div><div class="regional-bar-value">5</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">2 - Discovery</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:40%"></div></div><div class="regional-bar-value">4</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">3 - Solution Alignment</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:60%"></div></div><div class="regional-bar-value">6</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">4 - Proposal Submitted</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:50%"></div></div><div class="regional-bar-value">5</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">6 - Short Listed / Negotiations</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:30%"></div></div><div class="regional-bar-value">3</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">7 - Verbal Award</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:10%"></div></div><div class="regional-bar-value">1</div></div>
+    </div>
+  </div>
+  <div class="regional-chart-card">
+    <h2>North America Risk Mix</h2>
+    <p>At-a-glance view of low, medium, and high-risk opportunities.</p>
+    <div class="regional-donut-wrap"><div class="regional-risk-donut"></div></div>
+    <div class="regional-risk-legend">
+      <div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Low Risk</span><b>13</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Medium Risk</span><b>7</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>High Risk</span><b>4</b></div>
+    </div>
+  </div>
+</section>
+
 <section class="regional-dashboard-panel">
 <h2>North America Pipeline Snapshot</h2>
 <p>Replace the sample rows with CRM or SharePoint List data. Recommended filters: Sales Agent, Account, Stage, Close Date, Probability, Risk Level, and Follow-Up Status.</p>
@@ -3731,6 +3780,31 @@
 <div class="regional-dashboard-kpi"><div class="kpi-label">High Priority</div><div class="kpi-value">5</div><div class="kpi-note">Shortlisted, negotiation, or executive attention required.</div></div>
 <div class="regional-dashboard-kpi"><div class="kpi-label">Close Forecast</div><div class="kpi-value">30 Days</div><div class="kpi-note">Leadership view for near-term decision timing.</div></div>
 </section>
+<section class="regional-dashboard-chart-grid">
+  <div class="regional-chart-card">
+    <h2>ANZ Pipeline by Stage</h2>
+    <p>Visual snapshot of open opportunities by sales stage. Use this chart in weekly reviews to quickly identify where pursuits are concentrated and where movement is needed.</p>
+    <div class="regional-bar-chart">
+      <div class="regional-bar-row"><div class="regional-bar-label">1 - Prospecting / Qualification</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:38%"></div></div><div class="regional-bar-value">3</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">2 - Discovery</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:50%"></div></div><div class="regional-bar-value">4</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">3 - Solution Alignment</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:63%"></div></div><div class="regional-bar-value">5</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">4 - Proposal Submitted</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:50%"></div></div><div class="regional-bar-value">4</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">6 - Short Listed / Negotiations</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:25%"></div></div><div class="regional-bar-value">2</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">7 - Verbal Award</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:13%"></div></div><div class="regional-bar-value">1</div></div>
+    </div>
+  </div>
+  <div class="regional-chart-card">
+    <h2>ANZ Risk Mix</h2>
+    <p>At-a-glance view of low, medium, and high-risk opportunities.</p>
+    <div class="regional-donut-wrap"><div class="regional-risk-donut"></div></div>
+    <div class="regional-risk-legend">
+      <div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Low Risk</span><b>10</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Medium Risk</span><b>6</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>High Risk</span><b>3</b></div>
+    </div>
+  </div>
+</section>
+
 <section class="regional-dashboard-panel">
 <h2>ANZ Pipeline Snapshot</h2>
 <p>Replace the sample rows with CRM or SharePoint List data. Recommended filters: Sales Agent, Account, Stage, Close Date, Probability, Risk Level, and Follow-Up Status.</p>
@@ -4797,6 +4871,31 @@
 <div class="regional-dashboard-kpi"><div class="kpi-label">High Priority</div><div class="kpi-value">5</div><div class="kpi-note">Shortlisted, negotiation, or executive attention required.</div></div>
 <div class="regional-dashboard-kpi"><div class="kpi-label">Close Forecast</div><div class="kpi-value">30 Days</div><div class="kpi-note">Leadership view for near-term decision timing.</div></div>
 </section>
+<section class="regional-dashboard-chart-grid">
+  <div class="regional-chart-card">
+    <h2>Asia Pipeline by Stage</h2>
+    <p>Visual snapshot of open opportunities by sales stage. Use this chart in weekly reviews to quickly identify where pursuits are concentrated and where movement is needed.</p>
+    <div class="regional-bar-chart">
+      <div class="regional-bar-row"><div class="regional-bar-label">1 - Prospecting / Qualification</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:50%"></div></div><div class="regional-bar-value">4</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">2 - Discovery</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:63%"></div></div><div class="regional-bar-value">5</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">3 - Solution Alignment</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:50%"></div></div><div class="regional-bar-value">4</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">4 - Proposal Submitted</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:38%"></div></div><div class="regional-bar-value">3</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">6 - Short Listed / Negotiations</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:25%"></div></div><div class="regional-bar-value">2</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">7 - Verbal Award</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:13%"></div></div><div class="regional-bar-value">1</div></div>
+    </div>
+  </div>
+  <div class="regional-chart-card">
+    <h2>Asia Risk Mix</h2>
+    <p>At-a-glance view of low, medium, and high-risk opportunities.</p>
+    <div class="regional-donut-wrap"><div class="regional-risk-donut"></div></div>
+    <div class="regional-risk-legend">
+      <div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Low Risk</span><b>9</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Medium Risk</span><b>7</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>High Risk</span><b>3</b></div>
+    </div>
+  </div>
+</section>
+
 <section class="regional-dashboard-panel">
 <h2>Asia Pipeline Snapshot</h2>
 <p>Replace the sample rows with CRM or SharePoint List data. Recommended filters: Sales Agent, Account, Stage, Close Date, Probability, Risk Level, and Follow-Up Status.</p>
@@ -5863,6 +5962,31 @@
 <div class="regional-dashboard-kpi"><div class="kpi-label">High Priority</div><div class="kpi-value">5</div><div class="kpi-note">Shortlisted, negotiation, or executive attention required.</div></div>
 <div class="regional-dashboard-kpi"><div class="kpi-label">Close Forecast</div><div class="kpi-value">30 Days</div><div class="kpi-note">Leadership view for near-term decision timing.</div></div>
 </section>
+<section class="regional-dashboard-chart-grid">
+  <div class="regional-chart-card">
+    <h2>EMEA Pipeline by Stage</h2>
+    <p>Visual snapshot of open opportunities by sales stage. Use this chart in weekly reviews to quickly identify where pursuits are concentrated and where movement is needed.</p>
+    <div class="regional-bar-chart">
+      <div class="regional-bar-row"><div class="regional-bar-label">1 - Prospecting / Qualification</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:44%"></div></div><div class="regional-bar-value">4</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">2 - Discovery</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:33%"></div></div><div class="regional-bar-value">3</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">3 - Solution Alignment</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:56%"></div></div><div class="regional-bar-value">5</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">4 - Proposal Submitted</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:56%"></div></div><div class="regional-bar-value">5</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">6 - Short Listed / Negotiations</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:44%"></div></div><div class="regional-bar-value">4</div></div>
+<div class="regional-bar-row"><div class="regional-bar-label">7 - Verbal Award</div><div class="regional-bar-track"><div class="regional-bar-fill" style="width:22%"></div></div><div class="regional-bar-value">2</div></div>
+    </div>
+  </div>
+  <div class="regional-chart-card">
+    <h2>EMEA Risk Mix</h2>
+    <p>At-a-glance view of low, medium, and high-risk opportunities.</p>
+    <div class="regional-donut-wrap"><div class="regional-risk-donut"></div></div>
+    <div class="regional-risk-legend">
+      <div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Low Risk</span><b>12</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>Medium Risk</span><b>8</b></div>
+<div class="regional-risk-item"><span class="regional-risk-left"><span class="regional-risk-dot"></span>High Risk</span><b>3</b></div>
+    </div>
+  </div>
+</section>
+
 <section class="regional-dashboard-panel">
 <h2>EMEA Pipeline Snapshot</h2>
 <p>Replace the sample rows with CRM or SharePoint List data. Recommended filters: Sales Agent, Account, Stage, Close Date, Probability, Risk Level, and Follow-Up Status.</p>
