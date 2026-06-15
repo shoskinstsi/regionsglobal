@@ -1133,6 +1133,34 @@
   .regional-risk-item:nth-child(3) .regional-risk-dot{background:#d92d20}
   @media(max-width:1000px){.regional-dashboard-chart-grid{grid-template-columns:1fr}.regional-bar-row{grid-template-columns:1fr}.regional-bar-value{text-align:left}}
 
+
+
+  /* Home Page - Global Sales Agent Dashboard Across Regions */
+  .home-region-dashboard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 2px 8px rgba(15,23,42,.06);margin-top:22px;overflow:hidden;position:relative}
+  .home-region-dashboard:before{content:"";position:absolute;right:-80px;top:-95px;width:260px;height:260px;border-radius:50%;background:rgba(0,124,148,.08)}
+  .home-region-dashboard-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;position:relative;z-index:1;margin-bottom:18px}
+  .home-region-dashboard-header h2{margin:0 0 8px;color:#0b1f35;font-size:26px}
+  .home-region-dashboard-header p{margin:0;color:#667085;line-height:1.55;max-width:900px}
+  .home-region-dashboard-button{background:var(--ctm-navy);color:#fff;text-decoration:none;border-radius:999px;padding:11px 15px;font-weight:900;white-space:nowrap;cursor:pointer}
+  .region-dashboard-overview{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0;position:relative;z-index:1}
+  .region-dashboard-card-mini{background:#f8fafc;border:1px solid var(--line);border-radius:18px;padding:18px;border-top:7px solid var(--ctm-teal)}
+  .region-dashboard-card-mini:nth-child(2){border-top-color:var(--ctm-green)}
+  .region-dashboard-card-mini:nth-child(3){border-top-color:#f0b429}
+  .region-dashboard-card-mini:nth-child(4){border-top-color:#667085}
+  .region-dashboard-card-mini h3{margin:0 0 8px;color:#0b1f35;font-size:20px}
+  .region-dashboard-card-mini p{margin:0;color:#667085;font-size:13px;line-height:1.45}
+  .region-dashboard-metric-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .region-dashboard-metric{background:#fff;border:1px solid #d8e1ea;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:900;color:#344054}
+  .region-dashboard-table-wrap{position:relative;z-index:1;overflow:auto;border-radius:16px;border:1px solid var(--line);margin-top:16px}
+  .region-dashboard-table{width:100%;border-collapse:collapse;background:#fff;min-width:900px}
+  .region-dashboard-table th,.region-dashboard-table td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top}
+  .region-dashboard-table th{background:#f1f4f7;color:#29364a;text-transform:uppercase;letter-spacing:.06em;font-size:12px}
+  .region-dashboard-table tr:last-child td{border-bottom:none}
+  .region-pill{display:inline-block;border-radius:999px;padding:6px 10px;background:#eef8fb;color:var(--ctm-navy);font-weight:900;font-size:12px;white-space:nowrap}
+  .priority-pill{display:inline-block;border-radius:999px;padding:6px 10px;background:#fff4e5;color:#a15c00;font-weight:900;font-size:12px;white-space:nowrap}
+  @media(max-width:1050px){.region-dashboard-overview{grid-template-columns:repeat(2,1fr)}.home-region-dashboard-header{flex-direction:column}.home-region-dashboard-button{white-space:normal}}
+  @media(max-width:650px){.region-dashboard-overview{grid-template-columns:1fr}}
+
 </style>
 <!-- Updated: Regional Win/Loss sections now include home page tiles and full debrief templates. -->
 </head>
@@ -1215,6 +1243,11 @@
 <p>Shared tools, reporting, CRM guidance, proposal resources, and enablement support.</p>
 <span class="home-card-action">Open section</span>
 </a>
+<a class="home-exec-card" data-target="sales-agent-dashboard">
+<h3>Sales Agent Dashboard</h3>
+<p>View global pipeline health across North America, ANZ, Asia, and EMEA from one dashboard.</p>
+<span class="home-card-action">Open dashboard</span>
+</a>
 <a class="home-exec-card" data-target="templates">
 <h3>Templates</h3>
 <p>Approved decks, plans, briefings, checklists, customer proof, and CRM guides.</p>
@@ -1231,6 +1264,34 @@
 <span class="home-card-action">Open section</span>
 </a>
 </section>
+
+<section class="home-region-dashboard">
+<div class="home-region-dashboard-header">
+<div>
+<h2>Sales Agent Dashboard: All Regions</h2>
+<p>Use this global snapshot to compare pipeline activity, late follow-ups, high-priority opportunities, and close-stage deals across North America, ANZ, Asia, and EMEA.</p>
+</div>
+<a class="home-region-dashboard-button" data-target="sales-agent-dashboard">Open Full Dashboard</a>
+</div>
+<div class="region-dashboard-overview">
+<div class="region-dashboard-card-mini"><h3>North America</h3><p>Largest active pipeline with a strong mix of discovery, proposal, and negotiation-stage opportunities.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">22 Open</span><span class="region-dashboard-metric">$1.8M</span><span class="region-dashboard-metric">3 Late</span></div></div>
+<div class="region-dashboard-card-mini"><h3>ANZ</h3><p>Focused regional opportunities with several pursuits moving through proposal and presentation stages.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">10 Open</span><span class="region-dashboard-metric">$750K</span><span class="region-dashboard-metric">1 Late</span></div></div>
+<div class="region-dashboard-card-mini"><h3>Asia</h3><p>Emerging pipeline with opportunities concentrated in qualification, solution development, and bid support.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">8 Open</span><span class="region-dashboard-metric">$620K</span><span class="region-dashboard-metric">1 Late</span></div></div>
+<div class="region-dashboard-card-mini"><h3>EMEA</h3><p>Balanced regional activity with active executive reviews, negotiation-stage pursuits, and close forecast items.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">24 Open</span><span class="region-dashboard-metric">$2.1M</span><span class="region-dashboard-metric">3 Late</span></div></div>
+</div>
+<div class="region-dashboard-table-wrap">
+<table class="region-dashboard-table">
+<thead><tr><th>Region</th><th>Open Opportunities</th><th>Weighted Pipeline</th><th>Late Follow-Ups</th><th>Close Stage</th><th>Focus Area</th></tr></thead>
+<tbody>
+<tr><td><span class="region-pill">North America</span></td><td>22</td><td>$1.8M</td><td>3</td><td>6</td><td>Advance proposal-stage pursuits and confirm next-step ownership.</td></tr>
+<tr><td><span class="region-pill">ANZ</span></td><td>10</td><td>$750K</td><td>1</td><td>2</td><td>Move qualified opportunities into proposal and presentation readiness.</td></tr>
+<tr><td><span class="region-pill">Asia</span></td><td>8</td><td>$620K</td><td>1</td><td>1</td><td>Strengthen discovery notes, qualification, and solution fit validation.</td></tr>
+<tr><td><span class="region-pill">EMEA</span></td><td>24</td><td>$2.1M</td><td>3</td><td>5</td><td>Support negotiation-stage deals and executive decision timing.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
 <section class="home-summary-panel">
 <h2>Most Used Tools</h2>
 <div class="home-summary-list">
@@ -6765,76 +6826,88 @@
 </section>
 <section class="view" id="view-sales-agent-dashboard">
 <section class="hero">
-<div class="eyebrow">Sales Performance</div>
-<h1>Sales Agent Dashboard</h1>
-<p>Use this chart-style dashboard to review pipeline health, sales stage distribution, agent activity, and opportunities that need follow-up.</p>
+<div class="eyebrow">Global Pipeline Visibility</div>
+<h1>Sales Agent Dashboard: All Regions</h1>
+<p>Use this global dashboard to compare pipeline health, sales stage distribution, regional ownership, and opportunities that need follow-up across North America, ANZ, Asia, and EMEA.</p>
 <span class="owner">Page owner: Global Sales / Sales Operations</span>
 </section>
 <section class="dashboard-kpis">
 <div class="kpi-card">
-<div class="kpi-label">Open Opportunities</div>
-<div class="kpi-value">48</div>
-<div class="kpi-note">Active pipeline across assigned accounts.</div>
+<div class="kpi-label">Global Open Opportunities</div>
+<div class="kpi-value">64</div>
+<div class="kpi-note">Active pipeline across North America, ANZ, Asia, and EMEA.</div>
 </div>
 <div class="kpi-card">
 <div class="kpi-label">Weighted Pipeline</div>
-<div class="kpi-value">$4.2M</div>
-<div class="kpi-note">Estimated value based on stage probability.</div>
+<div class="kpi-value">$5.27M</div>
+<div class="kpi-note">Estimated value based on stage probability by region.</div>
 </div>
 <div class="kpi-card">
 <div class="kpi-label">Late Follow-Ups</div>
-<div class="kpi-value">7</div>
-<div class="kpi-note">Opportunities needing next-step action.</div>
+<div class="kpi-value">8</div>
+<div class="kpi-note">Regional opportunities needing next-step action.</div>
 </div>
 <div class="kpi-card">
 <div class="kpi-label">Close Stage</div>
-<div class="kpi-value">9</div>
-<div class="kpi-note">Opportunities in stages 6–8.</div>
+<div class="kpi-value">14</div>
+<div class="kpi-note">Opportunities in stages 6–8 across all regions.</div>
+</div>
+</section>
+<section class="home-region-dashboard" style="margin-bottom:22px">
+<div class="home-region-dashboard-header">
+<div>
+<h2>Regional Dashboard Summary</h2>
+<p>Each region has a dedicated pipeline view, but this global summary gives leadership one place to compare volume, risk, weighted value, and near-term close activity.</p>
+</div>
+<a class="home-region-dashboard-button" data-target="regions">Open Regional Hubs</a>
+</div>
+<div class="region-dashboard-overview">
+<div class="region-dashboard-card-mini"><h3>North America</h3><p>High-volume pipeline with current emphasis on proposal follow-up and negotiation readiness.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">22 Open</span><span class="region-dashboard-metric">$1.8M</span><span class="region-dashboard-metric">6 Close Stage</span></div></div>
+<div class="region-dashboard-card-mini"><h3>ANZ</h3><p>Focused active pipeline with proposal-stage opportunities requiring decision timeline tracking.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">10 Open</span><span class="region-dashboard-metric">$750K</span><span class="region-dashboard-metric">2 Close Stage</span></div></div>
+<div class="region-dashboard-card-mini"><h3>Asia</h3><p>Growing pipeline with priority on qualification, discovery notes, and solution-fit validation.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">8 Open</span><span class="region-dashboard-metric">$620K</span><span class="region-dashboard-metric">1 Close Stage</span></div></div>
+<div class="region-dashboard-card-mini"><h3>EMEA</h3><p>Strong regional activity with opportunities moving through executive review and negotiation.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">24 Open</span><span class="region-dashboard-metric">$2.1M</span><span class="region-dashboard-metric">5 Close Stage</span></div></div>
 </div>
 </section>
 <section class="agent-chart-grid">
 <div class="chart-panel">
 <div class="chart-title">
-<h2>Pipeline by CRM Sales Stage</h2>
-<span>Sample chart view</span>
+<h2>Pipeline by Region</h2>
+<span>Global regional view</span>
 </div>
 <div class="bar-chart">
-<div class="bar-row"><div class="bar-label">1 Active</div><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><div class="bar-value">14</div></div>
-<div class="bar-row"><div class="bar-label">2 Discovery / Qualification</div><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div><div class="bar-value">11</div></div>
-<div class="bar-row"><div class="bar-label">3 Solution Development</div><div class="bar-track"><div class="bar-fill" style="width:47%"></div></div><div class="bar-value">9</div></div>
-<div class="bar-row"><div class="bar-label">4 Proposal Submitted</div><div class="bar-track"><div class="bar-fill" style="width:36%"></div></div><div class="bar-value">7</div></div>
-<div class="bar-row"><div class="bar-label">5 Presentation Stage</div><div class="bar-track"><div class="bar-fill" style="width:26%"></div></div><div class="bar-value">5</div></div>
-<div class="bar-row"><div class="bar-label">6 Short Listed / Negotiations</div><div class="bar-track"><div class="bar-fill" style="width:21%"></div></div><div class="bar-value">4</div></div>
-<div class="bar-row"><div class="bar-label">7 Verbal Award</div><div class="bar-track"><div class="bar-fill" style="width:10%"></div></div><div class="bar-value">2</div></div>
-<div class="bar-row"><div class="bar-label">8 Closed - Won / Loss</div><div class="bar-track"><div class="bar-fill" style="width:16%"></div></div><div class="bar-value">3</div></div>
+<div class="bar-row"><div class="bar-label">North America</div><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div><div class="bar-value">22</div></div>
+<div class="bar-row"><div class="bar-label">ANZ</div><div class="bar-track"><div class="bar-fill" style="width:42%"></div></div><div class="bar-value">10</div></div>
+<div class="bar-row"><div class="bar-label">Asia</div><div class="bar-track"><div class="bar-fill" style="width:34%"></div></div><div class="bar-value">8</div></div>
+<div class="bar-row"><div class="bar-label">EMEA</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-value">24</div></div>
 </div>
 </div>
 <div class="chart-panel">
 <div class="chart-title">
-<h2>Stage Mix</h2>
-<span>Visual distribution</span>
+<h2>Global Stage Mix</h2>
+<span>All regions combined</span>
 </div>
 <div class="donut-wrap"><div class="donut"></div></div>
 <div class="legend">
-<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Active</div><b>14</b></div>
-<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Discovery</div><b>11</b></div>
-<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Solution Development</div><b>9</b></div>
-<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Proposal</div><b>7</b></div>
-<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Presentation</div><b>5</b></div>
-<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Negotiations</div><b>4</b></div>
+<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Active</div><b>15</b></div>
+<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Discovery</div><b>13</b></div>
+<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Solution Development</div><b>10</b></div>
+<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Proposal</div><b>9</b></div>
+<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Presentation</div><b>6</b></div>
+<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Negotiations</div><b>7</b></div>
 <div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Verbal Award</div><b>2</b></div>
-<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Closed</div><b>3</b></div>
+<div class="legend-item"><div class="legend-left"><span class="legend-dot"></span>Closed</div><b>2</b></div>
 </div>
 </div>
 </section>
 <section class="chart-panel">
 <div class="chart-title">
-<h2>Agent Account Stage Tracker</h2>
-<span>Sample dashboard table</span>
+<h2>Regional Account Stage Tracker</h2>
+<span>Sample dashboard table by region</span>
 </div>
 <table class="dashboard-table">
 <thead>
 <tr>
+<th>Region</th>
 <th>Account</th>
 <th>Owner</th>
 <th>CRM Stage</th>
@@ -6844,16 +6917,32 @@
 </tr>
 </thead>
 <tbody>
-<tr><td>Client A</td><td>Sales Agent</td><td>2 - Discovery / Qualification</td><td>10%</td><td>Send recap and confirm next meeting.</td><td><span class="status-pill">On Track</span></td></tr>
-<tr><td>Client B</td><td>Sales Agent</td><td>4 - Proposal Submitted</td><td>30%</td><td>Confirm decision timeline.</td><td><span class="status-pill">Follow Up</span></td></tr>
-<tr><td>Client C</td><td>Sales Agent</td><td>6 - Short Listed / Negotiations</td><td>75%</td><td>Review pricing gaps and executive sponsor action.</td><td><span class="status-pill">Priority</span></td></tr>
-<tr><td>Client D</td><td>Sales Agent</td><td>7 - Verbal Award</td><td>95%</td><td>Confirm written intent and redlining status.</td><td><span class="status-pill">Closing</span></td></tr>
+<tr><td><span class="region-pill">North America</span></td><td>Client A</td><td>Sales Agent</td><td>2 - Discovery / Qualification</td><td>10%</td><td>Send recap and confirm next meeting.</td><td><span class="status-pill">On Track</span></td></tr>
+<tr><td><span class="region-pill">ANZ</span></td><td>Client B</td><td>Sales Agent</td><td>4 - Proposal Submitted</td><td>30%</td><td>Confirm decision timeline and proposal review date.</td><td><span class="status-pill">Follow Up</span></td></tr>
+<tr><td><span class="region-pill">Asia</span></td><td>Client C</td><td>Sales Agent</td><td>3 - Solution Development</td><td>20%</td><td>Validate solution fit and required regional support.</td><td><span class="status-pill">Needs Update</span></td></tr>
+<tr><td><span class="region-pill">EMEA</span></td><td>Client D</td><td>Sales Agent</td><td>6 - Short Listed / Negotiations</td><td>75%</td><td>Review pricing gaps and executive sponsor action.</td><td><span class="status-pill">Priority</span></td></tr>
+<tr><td><span class="region-pill">North America</span></td><td>Client E</td><td>Sales Agent</td><td>7 - Verbal Award</td><td>95%</td><td>Confirm written intent and implementation handoff.</td><td><span class="status-pill">Closing</span></td></tr>
+</tbody>
+</table>
+</section>
+<section class="chart-panel">
+<div class="chart-title">
+<h2>Regional Action View</h2>
+<span>Leadership follow-up summary</span>
+</div>
+<table class="region-dashboard-table">
+<thead><tr><th>Region</th><th>Open Opportunities</th><th>Weighted Pipeline</th><th>Late Follow-Ups</th><th>Close Stage</th><th>Primary Focus</th></tr></thead>
+<tbody>
+<tr><td><span class="region-pill">North America</span></td><td>22</td><td>$1.8M</td><td><span class="priority-pill">3</span></td><td>6</td><td>Proposal follow-up, negotiation readiness, and executive sponsor alignment.</td></tr>
+<tr><td><span class="region-pill">ANZ</span></td><td>10</td><td>$750K</td><td><span class="priority-pill">1</span></td><td>2</td><td>Decision timeline tracking and proposal-stage opportunity progression.</td></tr>
+<tr><td><span class="region-pill">Asia</span></td><td>8</td><td>$620K</td><td><span class="priority-pill">1</span></td><td>1</td><td>Qualification notes, regional solution fit, and next-step ownership.</td></tr>
+<tr><td><span class="region-pill">EMEA</span></td><td>24</td><td>$2.1M</td><td><span class="priority-pill">3</span></td><td>5</td><td>Negotiation-stage support, close forecast, and executive review cadence.</td></tr>
 </tbody>
 </table>
 </section>
 <section class="content-card" style="margin-top:18px">
 <h2>Suggested SharePoint Setup</h2>
-<p>Recommended web parts: Power BI, List, Quick Links, Highlighted Content, and People. Recommended filters: Region, Sales Agent, Account, CRM Stage, Close Date, Probability, and Follow-Up Status.</p>
+<p>Recommended web parts: Power BI, List, Quick Links, Highlighted Content, and People. Recommended filters: Region, Sales Agent, Account, CRM Stage, Close Date, Probability, Follow-Up Status, Risk Level, and Next Step Owner.</p>
 <a class="backtop" data-target="home">Back to Home ↑</a>
 </section>
 </section>
