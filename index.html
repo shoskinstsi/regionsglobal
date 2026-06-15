@@ -1143,14 +1143,18 @@
   .home-region-dashboard-header p{margin:0;color:#667085;line-height:1.55;max-width:900px}
   .home-region-dashboard-button{background:var(--ctm-navy);color:#fff;text-decoration:none;border-radius:999px;padding:11px 15px;font-weight:900;white-space:nowrap;cursor:pointer}
   .region-dashboard-overview{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0;position:relative;z-index:1}
-  .region-dashboard-card-mini{background:#f8fafc;border:1px solid var(--line);border-radius:18px;padding:18px;border-top:7px solid var(--ctm-teal)}
+  .region-dashboard-card-mini{background:#f8fafc;border:1px solid var(--line);border-radius:18px;padding:18px;border-top:7px solid var(--ctm-teal);text-decoration:none;color:var(--ink);display:block;cursor:pointer;transition:.15s ease;position:relative}
   .region-dashboard-card-mini:nth-child(2){border-top-color:var(--ctm-green)}
   .region-dashboard-card-mini:nth-child(3){border-top-color:#f0b429}
   .region-dashboard-card-mini:nth-child(4){border-top-color:#667085}
+  .region-dashboard-card-mini:hover{background:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(15,23,42,.12);border-color:#cfd8e3}
   .region-dashboard-card-mini h3{margin:0 0 8px;color:#0b1f35;font-size:20px}
   .region-dashboard-card-mini p{margin:0;color:#667085;font-size:13px;line-height:1.45}
   .region-dashboard-metric-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
   .region-dashboard-metric{background:#fff;border:1px solid #d8e1ea;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:900;color:#344054}
+  .region-dashboard-link-label{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--ctm-teal);font-weight:900;font-size:13px}
+  .region-dashboard-row-link{color:var(--ctm-navy);font-weight:900;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .region-dashboard-row-link:hover{color:var(--ctm-teal);text-decoration:underline}
   .region-dashboard-table-wrap{position:relative;z-index:1;overflow:auto;border-radius:16px;border:1px solid var(--line);margin-top:16px}
   .region-dashboard-table{width:100%;border-collapse:collapse;background:#fff;min-width:900px}
   .region-dashboard-table th,.region-dashboard-table td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top}
@@ -6862,10 +6866,10 @@
 <a class="home-region-dashboard-button" data-target="regions">Open Regional Hubs</a>
 </div>
 <div class="region-dashboard-overview">
-<div class="region-dashboard-card-mini"><h3>North America</h3><p>High-volume pipeline with current emphasis on proposal follow-up and negotiation readiness.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">22 Open</span><span class="region-dashboard-metric">$1.8M</span><span class="region-dashboard-metric">6 Close Stage</span></div></div>
-<div class="region-dashboard-card-mini"><h3>ANZ</h3><p>Focused active pipeline with proposal-stage opportunities requiring decision timeline tracking.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">10 Open</span><span class="region-dashboard-metric">$750K</span><span class="region-dashboard-metric">2 Close Stage</span></div></div>
-<div class="region-dashboard-card-mini"><h3>Asia</h3><p>Growing pipeline with priority on qualification, discovery notes, and solution-fit validation.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">8 Open</span><span class="region-dashboard-metric">$620K</span><span class="region-dashboard-metric">1 Close Stage</span></div></div>
-<div class="region-dashboard-card-mini"><h3>EMEA</h3><p>Strong regional activity with opportunities moving through executive review and negotiation.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">24 Open</span><span class="region-dashboard-metric">$2.1M</span><span class="region-dashboard-metric">5 Close Stage</span></div></div>
+<a class="region-dashboard-card-mini" data-target="north-america-sales-agent-dashboard" aria-label="Open North America Sales Agent Dashboard"><h3>North America</h3><p>High-volume pipeline with current emphasis on proposal follow-up and negotiation readiness.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">22 Open</span><span class="region-dashboard-metric">$1.8M</span><span class="region-dashboard-metric">6 Close Stage</span></div><span class="region-dashboard-link-label">Open North America Dashboard →</span></a>
+<a class="region-dashboard-card-mini" data-target="anz-sales-agent-dashboard" aria-label="Open ANZ Sales Agent Dashboard"><h3>ANZ</h3><p>Focused active pipeline with proposal-stage opportunities requiring decision timeline tracking.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">10 Open</span><span class="region-dashboard-metric">$750K</span><span class="region-dashboard-metric">2 Close Stage</span></div><span class="region-dashboard-link-label">Open ANZ Dashboard →</span></a>
+<a class="region-dashboard-card-mini" data-target="asia-sales-agent-dashboard" aria-label="Open Asia Sales Agent Dashboard"><h3>Asia</h3><p>Growing pipeline with priority on qualification, discovery notes, and solution-fit validation.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">8 Open</span><span class="region-dashboard-metric">$620K</span><span class="region-dashboard-metric">1 Close Stage</span></div><span class="region-dashboard-link-label">Open Asia Dashboard →</span></a>
+<a class="region-dashboard-card-mini" data-target="emea-sales-agent-dashboard" aria-label="Open EMEA Sales Agent Dashboard"><h3>EMEA</h3><p>Strong regional activity with opportunities moving through executive review and negotiation.</p><div class="region-dashboard-metric-row"><span class="region-dashboard-metric">24 Open</span><span class="region-dashboard-metric">$2.1M</span><span class="region-dashboard-metric">5 Close Stage</span></div><span class="region-dashboard-link-label">Open EMEA Dashboard →</span></a>
 </div>
 </section>
 <section class="agent-chart-grid">
@@ -6917,11 +6921,11 @@
 </tr>
 </thead>
 <tbody>
-<tr><td><span class="region-pill">North America</span></td><td>Client A</td><td>Sales Agent</td><td>2 - Discovery / Qualification</td><td>10%</td><td>Send recap and confirm next meeting.</td><td><span class="status-pill">On Track</span></td></tr>
-<tr><td><span class="region-pill">ANZ</span></td><td>Client B</td><td>Sales Agent</td><td>4 - Proposal Submitted</td><td>30%</td><td>Confirm decision timeline and proposal review date.</td><td><span class="status-pill">Follow Up</span></td></tr>
-<tr><td><span class="region-pill">Asia</span></td><td>Client C</td><td>Sales Agent</td><td>3 - Solution Development</td><td>20%</td><td>Validate solution fit and required regional support.</td><td><span class="status-pill">Needs Update</span></td></tr>
-<tr><td><span class="region-pill">EMEA</span></td><td>Client D</td><td>Sales Agent</td><td>6 - Short Listed / Negotiations</td><td>75%</td><td>Review pricing gaps and executive sponsor action.</td><td><span class="status-pill">Priority</span></td></tr>
-<tr><td><span class="region-pill">North America</span></td><td>Client E</td><td>Sales Agent</td><td>7 - Verbal Award</td><td>95%</td><td>Confirm written intent and implementation handoff.</td><td><span class="status-pill">Closing</span></td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="north-america-sales-agent-dashboard"><span class="region-pill">North America</span> →</a></td><td>Client A</td><td>Sales Agent</td><td>2 - Discovery / Qualification</td><td>10%</td><td>Send recap and confirm next meeting.</td><td><span class="status-pill">On Track</span></td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="anz-sales-agent-dashboard"><span class="region-pill">ANZ</span> →</a></td><td>Client B</td><td>Sales Agent</td><td>4 - Proposal Submitted</td><td>30%</td><td>Confirm decision timeline and proposal review date.</td><td><span class="status-pill">Follow Up</span></td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="asia-sales-agent-dashboard"><span class="region-pill">Asia</span> →</a></td><td>Client C</td><td>Sales Agent</td><td>3 - Solution Development</td><td>20%</td><td>Validate solution fit and required regional support.</td><td><span class="status-pill">Needs Update</span></td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="emea-sales-agent-dashboard"><span class="region-pill">EMEA</span> →</a></td><td>Client D</td><td>Sales Agent</td><td>6 - Short Listed / Negotiations</td><td>75%</td><td>Review pricing gaps and executive sponsor action.</td><td><span class="status-pill">Priority</span></td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="north-america-sales-agent-dashboard"><span class="region-pill">North America</span> →</a></td><td>Client E</td><td>Sales Agent</td><td>7 - Verbal Award</td><td>95%</td><td>Confirm written intent and implementation handoff.</td><td><span class="status-pill">Closing</span></td></tr>
 </tbody>
 </table>
 </section>
@@ -6933,10 +6937,10 @@
 <table class="region-dashboard-table">
 <thead><tr><th>Region</th><th>Open Opportunities</th><th>Weighted Pipeline</th><th>Late Follow-Ups</th><th>Close Stage</th><th>Primary Focus</th></tr></thead>
 <tbody>
-<tr><td><span class="region-pill">North America</span></td><td>22</td><td>$1.8M</td><td><span class="priority-pill">3</span></td><td>6</td><td>Proposal follow-up, negotiation readiness, and executive sponsor alignment.</td></tr>
-<tr><td><span class="region-pill">ANZ</span></td><td>10</td><td>$750K</td><td><span class="priority-pill">1</span></td><td>2</td><td>Decision timeline tracking and proposal-stage opportunity progression.</td></tr>
-<tr><td><span class="region-pill">Asia</span></td><td>8</td><td>$620K</td><td><span class="priority-pill">1</span></td><td>1</td><td>Qualification notes, regional solution fit, and next-step ownership.</td></tr>
-<tr><td><span class="region-pill">EMEA</span></td><td>24</td><td>$2.1M</td><td><span class="priority-pill">3</span></td><td>5</td><td>Negotiation-stage support, close forecast, and executive review cadence.</td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="north-america-sales-agent-dashboard"><span class="region-pill">North America</span> →</a></td><td>22</td><td>$1.8M</td><td><span class="priority-pill">3</span></td><td>6</td><td>Proposal follow-up, negotiation readiness, and executive sponsor alignment.</td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="anz-sales-agent-dashboard"><span class="region-pill">ANZ</span> →</a></td><td>10</td><td>$750K</td><td><span class="priority-pill">1</span></td><td>2</td><td>Decision timeline tracking and proposal-stage opportunity progression.</td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="asia-sales-agent-dashboard"><span class="region-pill">Asia</span> →</a></td><td>8</td><td>$620K</td><td><span class="priority-pill">1</span></td><td>1</td><td>Qualification notes, regional solution fit, and next-step ownership.</td></tr>
+<tr><td><a class="region-dashboard-row-link" data-target="emea-sales-agent-dashboard"><span class="region-pill">EMEA</span> →</a></td><td>24</td><td>$2.1M</td><td><span class="priority-pill">3</span></td><td>5</td><td>Negotiation-stage support, close forecast, and executive review cadence.</td></tr>
 </tbody>
 </table>
 </section>
